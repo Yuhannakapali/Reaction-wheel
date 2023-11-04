@@ -1,0 +1,1 @@
+<img src="/schematic.png" alt="Schematic"/>
