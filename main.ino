@@ -10,8 +10,8 @@
 #define PWM           9
 #define DIRECTION     4
 
-#define BUZZER        12
-#define VBAT          A7
+#define BUZZER        14
+#define VBAT          A0
 
 const uint16_t PWM_FREQUENCY = 20000;                 // The motor driver can handle a PWM frequency up to 20kHz
 const uint16_t PWMVALUE = F_CPU / PWM_FREQUENCY / 2;  // The frequency is given by F_CPU/(2*N*ICR) - where N is the prescaler, prescaling is used so the frequency is given by F_CPU/(2*ICR) - ICR = F_CPU/PWM_FREQUENCY/2
