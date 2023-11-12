@@ -16,10 +16,10 @@
 const uint16_t PWM_FREQUENCY = 20000;                 // The motor driver can handle a PWM frequency up to 20kHz
 const uint16_t PWMVALUE = F_CPU / PWM_FREQUENCY / 2;  // The frequency is given by F_CPU/(2*N*ICR) - where N is the prescaler, prescaling is used so the frequency is given by F_CPU/(2*ICR) - ICR = F_CPU/PWM_FREQUENCY/2
 
-float X1 = 75.0; 
-float X2 = 5.25;   
+float X1 = 175.0; 
+float X2 = 16.0;   
 float X3 = 0.04;  
-float loop_time = 10;  
+float loop_time = 8;  
 
 int pwm_s = 0;
 byte dir;
@@ -105,7 +105,7 @@ void angle_calc() {
   Acc_angle = atan2(AcY, -AcX) * 57.2958;               // angle from acc. values       * 57.2958 (deg/rad)
   robot_angle = robot_angle * Gyro_amount + Acc_angle * (1.0 - Gyro_amount);
   
-  if (abs(robot_angle) > 9) vertical = false;
+  if (abs(robot_angle) > 6) vertical = false;
   if (abs(robot_angle) < 0.3) vertical = true;
   
   //Serial.print("Angle: "); Serial.println(robot_angle);
